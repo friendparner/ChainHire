@@ -1,0 +1,26 @@
+To install MetaMask:
+
+Chrome/Brave/Edge:
+
+Go to https://metamask.io/download/
+Click "Install MetaMask for [Your Browser]"
+Click "Add to [Browser]" in the Chrome Web Store
+Click "Add Extension"
+Follow the setup wizard to create your wallet
+Firefox:
+
+Go to https://metamask.io/download/
+Click "Install MetaMask for Firefox"
+Click "Add to Firefox"
+After installation:
+
+Click the MetaMask icon in your browser toolbar
+Click "Create a new wallet"
+Set a password
+Save your secret recovery phrase (12 words) - IMPORTANT!
+Complete the setup
+Then return to http://localhost:8001/index.html and click "Connect Wallet"
+
+Alternative (without MetaMask): You can use the account directly by importing it into MetaMask:
+
+Private Key: 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
