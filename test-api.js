@@ -1,10 +1,10 @@
-// System Test Script
+// D-HRS System Test Script
 const axios = require('axios');
 
 const API_BASE = 'http://localhost:3000/api/v1';
 
 async function testAPI() {
-  console.log('\n========== API TEST ==========\n');
+  console.log('\n========== D-HRS API TEST ==========\n');
 
   try {
     // Test 1: Health Check

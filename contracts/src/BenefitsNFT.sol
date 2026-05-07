@@ -30,7 +30,7 @@ contract BenefitsNFT is ERC721, AccessControl, Pausable {
     );
     event BenefitRevoked(uint256 indexed tokenId);
 
-    constructor() ERC721("Benefits", "DBNFT") {
+    constructor() ERC721("D-HRS Benefits", "DBNFT") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(MINTER_ROLE, msg.sender);
         _grantRole(BURNER_ROLE, msg.sender);

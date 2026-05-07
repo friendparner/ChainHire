@@ -1,4 +1,4 @@
-// Smart Contracts
+// D-HRS Smart Contracts
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
@@ -542,7 +542,7 @@ contract BenefitsNFT is ERC721URIStorage, AccessControlUpgradeable, PausableUpgr
     event BenefitRevoked(uint256 indexed tokenId);
 
     function initialize() public initializer {
-        __ERC721_init("Benefits", "DBNFT");
+        __ERC721_init("D-HRS Benefits", "DBNFT");
         __ERC721URIStorage_init();
         __AccessControl_init();
         __Pausable_init();
@@ -785,7 +785,7 @@ contract DHRSSmartAccount is IAccount, EIP712 {
         _;
     }
     
-    constructor(address _owner, address _entryPoint) EIP712("Account", "1") {
+    constructor(address _owner, address _entryPoint) EIP712("D-HRS Account", "1") {
         owner = _owner;
         entryPoint = _entryPoint;
         threshold = 1;

@@ -92,7 +92,7 @@ export default function Home() {
     <div className="container">
       <header className="header">
         <div className="logo">
-          <h1></h1>
+          <h1>D-HRS</h1>
           <span>Decentralized HR System</span>
         </div>
         <div className="wallet-section">
@@ -279,7 +279,7 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <p>Built with Ethereum, Layer 2, and ERC-4337</p>
+        <p>D-HRS v2.0 - Built with Ethereum, Layer 2, and ERC-4337</p>
       </footer>
     </div>
   );
