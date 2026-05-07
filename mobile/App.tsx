@@ -1,20 +1,20 @@
-import "fast-text-encoding";
 import "react-native-get-random-values";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { View, Text, Button, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from "react-native";
-import { WagmiConfig, useWalletClient, useAccount, useConnect, useDisconnect, createConfig, configureChains } from "wagmi";
+import { WagmiProvider, useWalletClient, useAccount, useConnect, useDisconnect } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { publicProvider } from "wagmi/providers/public";
-import { InjectedConnector } from "wagmi/connectors/injected";
+import { http, createConfig } from "wagmi";
 import { mainnet, sepolia } from "wagmi/chains";
-
-const { chains, publicClient } = configureChains([mainnet, sepolia], [publicProvider()]);
+import { injected } from "wagmi/connectors";
 
 const config = createConfig({
-  autoConnect: true,
-  connectors: [new InjectedConnector({ chains })],
-  publicClient,
+  chains: [mainnet, sepolia],
+  transports: {
+    [mainnet.id]: http(),
+    [sepolia.id]: http(),
+  },
+  connectors: [injected()],
 });
 
 const queryClient = new QueryClient();
@@ -51,7 +51,7 @@ function DashboardScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>D-HRS v2.0</Text>
+        <Text style={styles.title}></Text>
         <View style={styles.headerRight}>
           <View style={[styles.statusDot, isConnected ? styles.connected : styles.disconnected]} />
           <Text style={styles.statusText}>{isConnected ? "Connected" : "Disconnected"}</Text>
@@ -189,11 +189,11 @@ function GovernanceContent() {
 
 export default function App() {
   return (
-    <WagmiConfig config={config}>
+    <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <DashboardScreen />
       </QueryClientProvider>
-    </WagmiConfig>
+    </WagmiProvider>
   );
 }
 

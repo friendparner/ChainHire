@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-// Simple D-HRS Test Runner
+// Simple Test Runner
 // This simulates running tests without full blockchain environment
 
 console.log("=".repeat(60));
-console.log("D-HRS v2.0 - Smart Contract Test Runner");
+console.log("Smart Contract Test Runner");
 console.log("=".repeat(60));
 console.log();
 
@@ -186,5 +186,5 @@ console.log("  - Credentials");
 console.log("  - Governance");
 console.log();
 console.log("=".repeat(60));
-console.log("D-HRS v2.0 - Ready for deployment!");
+console.log("Ready for deployment!");
 console.log("=".repeat(60));
